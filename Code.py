@@ -1,7 +1,7 @@
 import mysql.connector as a
 
 def add():
-    mydb=a.connect(host="localhost",user="root",password="123456",database="files")
+    mydb=a.connect(host="localhost",user="root",password="mysql database password",database="database name where table is stored")
     mycursor=mydb.cursor()
     mycursor.execute("select * from marksheet")
     result=mycursor.fetchall()
@@ -14,7 +14,7 @@ def add():
             break
     else :
         mydb.close()
-        mydb=a.connect(host="localhost",user="root",password="123456",database="files")
+        mydb=a.connect(host="localhost",user="root",password="mysql database password",database="database name where table is stored")
         mycursor=mydb.cursor()
         sql1="insert into marksheet (ROLL_NO,NAME,ENGLISH,PHYSICS,CHEMISTRY,MATHS,BIOLOGY,COMPUTER) values (%s,%s,%s,%s,%s,%s,%s,%s)"
         rno=rollno
@@ -66,7 +66,7 @@ def add():
 def display():
     print()
     print("\n  CLASS 12 MARKSHEET RECORD !!!!! \n")
-    mydb=a.connect(host="localhost",user="root",password="123456",database="files")
+    mydb=a.connect(host="localhost",user="root",password="mysql database password",database="database name where table is stored")
     mycursor=mydb.cursor()
     sql1="update marksheet set TOTAL_MARKS=ENGLISH+PHYSICS+CHEMISTRY+MATHS+BIOLOGY+COMPUTER"
     mycursor.execute(sql1)
@@ -105,7 +105,7 @@ def display():
 
 def search():
     print()
-    mydb=a.connect(host="localhost",user="root",password="123456",database="files")
+    mydb=a.connect(host="localhost",user="root",password="mysql database password",database="database name where table is stored")
     mycursor=mydb.cursor()
     sql1="update marksheet set TOTAL_MARKS=ENGLISH+PHYSICS+CHEMISTRY+MATHS+BIOLOGY+COMPUTER"
     mycursor.execute(sql1)
@@ -151,7 +151,7 @@ def search():
 def delete():
     print()
 
-    mydb=a.connect(host="localhost",user="root",password="123456",database="files")
+    mydb=a.connect(host="localhost",user="root",password="mysql database password",database="database name where table is stored")
     mycursor=mydb.cursor()
     mycursor.execute("select * from marksheet")
     result=mycursor.fetchall()
@@ -211,7 +211,7 @@ def delete():
 def modify():
 
     print()
-    mydb=a.connect(host="localhost",user="root",password="123456",database="files")
+    mydb=a.connect(host="localhost",user="root",password="mysql database password",database="database name where table is stored")
     mycursor=mydb.cursor()
     sql1="UPDATE marksheet set roll_no= %s, name= %s, english=%s, physics=%s, chemistry=%s, maths=%s, biology=%s, computer=%s  where roll_no= %s"
     rollno=int(input("  ENTER THE ROLL NO TO MODIFY : "))
